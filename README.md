@@ -8,6 +8,7 @@ rmdir /S /Q %DIRNAME%
 
 Git Useful Tips
 --------------
+```
 git remote -v
 git remote rm destination
 
@@ -19,7 +20,7 @@ git status
 git add .    - adds all files
 git commit -m 'First commit'
 git push origin master --force  # <- caution, --force can delete others work.
-
+```
 
 ## Project setup
 ```
