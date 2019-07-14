@@ -22,6 +22,35 @@ git commit -m 'First commit'
 git push origin master --force  # <- caution, --force can delete others work.
 ```
 
+##Vue Bootstrap Documentation
+```
+https://bootstrap-vue.js.org/docs/components/table
+    <b-table striped hover :items="cats">
+        <template slot="first_name" slot-scope="data">
+        <!--`data.value` is the value after formatted by the Formatter -->
+        <!--<a :href="`#${data.value.replace(/[^a-z]+/i,'-').toLowerCase()}`">{{ data.value }}</a>-->
+        <router-link :to="`/pet/cat/${data.index}`"> {{data.value}} </router-link>
+        </template>
+    </b-table>
+
+```
+
+##Forms
+```
+    <b-form @submit="onSubmit" @reset="onReset">
+        <b-form-group id="input-group-1" label="Firstname:" label-for="input-1">
+            <b-form-input
+            id="input-1"
+            v-model="formData.first_name"
+            required
+            placeholder="Enter first name"
+            ></b-form-input>
+        </b-form-group>
+        <b-button type="submit" variant="primary">Submit</b-button>
+        <b-button type="reset" variant="danger">Reset</b-button>
+    </b-form>
+```
+
 ## Project setup
 ```
 npm install

@@ -1,23 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Todos from './views/Todos.vue'
+import Todos from '@/views/Todos.vue'
+import Cats from '@/views/Cats.vue'
+import Dogs from '@/views/Dogs.vue'
+import Pets from '@/views/Pets.vue'
+import Pet from '@/views/Pet.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'todos',
-      component: Todos
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('@/views/About.vue')/* webpackChunkName: "about" */ 
-    }
+    { path: '/', name: 'todos', component: Todos },
+    { path: '/cats', name: 'cats', component: Cats },
+    { path: '/dogs', name: 'dogs', component: Dogs },
+    { path: '/pets', name: 'pets', component: Pets },
+    { path: '/pet/:species/:id', name: 'pet', component: Pet },
+    { path: '/about', name: 'about', component: () => import('@/views/About.vue') },
   ]
 })
